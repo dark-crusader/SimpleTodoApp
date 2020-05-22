@@ -1,0 +1,10 @@
+#container {
+    width: 21rem;
+    margin: 0 auto;
+    border: 0.133rem solid gray;
+}
+
+.strike {
+    color: #909999;
+    text-decoration: line-through;
+}
