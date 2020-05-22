@@ -5,12 +5,14 @@ var UIController = (function() {
         inputField: 'input[type="text"]',
         deleteBtn: 'span.delete',
         item: 'li.item',
-        todoList: '#todoList'
+        todoList: '#todoList',
+        plus: '.fa-plus',
+        rotate: 'fa-rotate-45'
     };
 
     // Utility funciton to generate HTML element
     function getHTML(text) {
-        return `<li class="item"> <span class="delete">X</span> ${text}</li>`;
+        return `<li class="item"> <span class="delete"><i class="fa fa-trash"></i></span> ${text}</li>`;
     }
 
     return {
@@ -46,6 +48,11 @@ var EventHandler = (function(UICtrl) {
                 // Clear input field
                 $(UICtrl.labels.inputField).val('');
             }
+        });
+
+        $(UICtrl.labels.plus).on('click', function() {
+            $(UICtrl.labels.inputField).fadeToggle(300);
+            $(UICtrl.labels.plus).toggleClass(UICtrl.labels.rotate);
         });
     }
 
